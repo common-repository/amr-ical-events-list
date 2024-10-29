@@ -1,0 +1,255 @@
+/* icalevents list and amr-events default css
+This file should have been copied to a css folder in your uploads directory.  It may safely be edited in the uploads folder and will not be overwritten by upgrades,
+You can always refer back to the default css in the plugin folder for the latest suggested or example css.
+*/
+
+table.ical th,
+table.ical td {
+	border:none;
+}
+table.ical th,
+table.ical td {
+	padding:0;
+}
+
+/* unfortunately we need to use divs to hide the details if we want to allow html in details and keep html valid */
+/* ------------------------------ In Box Calendar-- hide the details until we want them  */
+
+
+#events_wrap table.ical td .event div.details2 { /* hide column 2 */
+	display: none;
+}
+#events_wrap table.ical .event:hover  div.details2 {
+        color:#333333; 
+        background:#ffffff; 
+        display:block;
+        position:absolute; 
+        margin-top: 12px; 
+		margin-left: 50px;
+        padding:10px; 
+        width:200px; 
+        z-index:100;
+		border: 1px solid #000000;
+		overflow: hidden;  /* v 4.0.12 */
+        }
+#events_wrap table.ical .event:hover  div.details2 {
+	display: block;
+         }
+#events_wrap table.ical .event:hover  div.details2 img {
+	width: 200px;  /* make any images smaller */
+         }	
+#events_wrap table.ical td.endweek .event:hover  div.details2 {  
+/* shift the last column right side over a bit so it fits on the page*/
+		margin-left: -110px;
+        }	
+
+/*-------------------------------------------calendar_views, agenda or box calendar*/	
+#calendar_views {
+	padding: 5px;
+	width: 100%;
+	text-align: center;
+}
+#calendar_views a {
+	
+}
+/* Month navigation */
+#events_wrap .calendar_navigation form {
+	width: 100%;
+	text-align: center;
+}
+#events_wrap .calendar_navigation form input {
+	border: none;
+}
+
+#events_wrap .calendar_navigation a.nextmonth {
+	text-align: right;
+	float: right;
+}
+
+/* Box calendars */
+table.smallcalendar,
+#events_wrap table.largecalendar {
+        table-layout: fixed;
+        width: 100%;
+		overflow: hidden;
+		border-collapse: collapse;
+		border: thin solid;
+    }
+	
+#events_wrap table.largecalendar tbody tr {
+	border: thin solid;
+}
+
+table.smallcalendar td,
+#events_wrap table.largecalendar td
+{
+	width: 14.2%
+}
+
+table.smallcalendar {
+	padding: 0; 
+	max-width: 200px;
+	min-width: 150px;  
+	margin:2%;
+	text-align: center; 
+	table-layout: fixed;  
+	font-size: small;
+	border: none;
+}
+
+table.smallcalendar th,
+table.smallcalendar td {
+	border: none;
+}
+
+#multismallcalendar table.smallcalendar {
+	float: left; /* chrome browser will not float - why?? */
+	/*width: 32%; */
+}
+
+table.smallcalendar td.pad,
+#events_wrap table.largecalendar td.pad{
+	/* if you wanted visible padding*/
+}
+
+.smallcalendar tr {
+    text-overflow: hidden;
+    white-space: nowrap;
+} 
+.smallcalendar td {
+	text-overflow: hidden;
+}
+.smallcalendar td div {
+	float: left;  /* to get rid of that extra whitespace that should not be there after the div*/
+}
+
+.smallcalendar table.ical td {
+ max-width: 0;
+ overflow: hidden;
+ text-overflow: hidden;
+ white-space: nowrap;
+}
+
+table.smallcalendar tr.emptyweek td.pad { /* in case we are floating or have weeks next to each other*/
+	background: none;
+	border: none;
+}
+
+/*-----------------------------------boxcalendar days------------ */
+.smallcalendar td,
+.smallcalendar th,
+#events_wrap td {
+	vertical-align: top;
+}
+
+/* highlight which day we are hovering over */
+table.smallcalendar td.hasevents a:hover {
+	color: #fff;
+}
+/* highlight which day we are hovering over */
+#events_wrap  .largecalendar td.hasevents:hover .day{
+	background: #777;
+	color: #fff;
+}
+#events_wrap  .largecalendar td.hasevents:hover .day a{
+	color: #fff;
+}
+
+/* Calendar properties at top */
+
+#events_wrap table.icalprop tr td,
+table.icalprop td {
+	border: 0;
+}
+table.icalprop td {
+	border: none;
+}
+table.icalprop td {
+	border: none;
+	padding: 0;
+}
+table.icalprop td a.amr-bling{ /* icons etc in col2*/
+	float: right;
+}
+
+.DELamr-bling { /* float our little icons to the right */
+	float: right;
+	padding:0; 
+	margin: 0;   /* required where sometimes they don't line up nicely if limited text */
+}
+
+.vcalendar a {
+	background-color: inherit;
+
+}
+.vcalendar a:active {	color: inherit; }
+
+a.icalsubscribe img.amr-bling,
+a.subseries img.amr-bling,
+a.subevent img.amr-bling,
+a.addtogoogle img.amr-bling,
+a.hrefaddtogoogle img.amr-bling,
+a.timezone img.amr-bling,
+a.refresh img.amr-bling,
+a.hrefmap img.amr-bling { /* hide all the bling images and replace them with dashicons */
+	display:none;
+	vertical-align: text-bottom; 
+	float: right;
+}
+
+div.icalsubscribe,
+div.subscribeevent,
+div.addtogoogle,
+div.hrefaddtogoogle,
+div.timezone,
+div.refresh,
+div.hrefmap,
+div.addevent {
+	float: right;
+}	
+
+a.subseries,
+a.icalsubscribe,
+a.subevent,
+a.addtogoogle,
+a.hrefaddtogoogle,
+a.timezone,
+a.refresh,
+a.hrefmap {  
+	text-decoration: none;
+	font-family: 'Dashicons';
+	font-size: 1.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+a.hrefmap:before {
+	content: "\f230";
+}
+
+a.subevent:before {
+	content: "\f132";  /* plus */
+}
+
+a.subseries:before,
+a.icalsubscribe:before {
+	content: "\f508";  /* calendar alt */
+}
+
+a.addtogoogle:before,
+a.hrefaddtogoogle:before {
+	content: "\f18b";
+}
+a.timezone:before {
+	content: "\f18c";  /* hourglass */
+}
+a.refresh:before {
+	content: "\f463";  /* update */
+}
+
+
+#icalnavs {  /* the nav at the bottom */
+	text-align: center; 
+	vertical-align: middle;
+	margin: 0 auto;
+	}

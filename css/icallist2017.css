@@ -1,0 +1,207 @@
+/* AmRiCal Default Style for first calendar on page 
+This file should have been copied to a css folder in your uploads directory.  It may safely be edited in the uploads folder and will not be overwritten by upgrades,
+You can always refer back to the default css in the plugin folder for the latest suggested or example css.
+*/
+
+td.today
+{
+background: #eee;
+color: #111;
+}
+
+
+table td  a.amr-bling {
+	text-align: right;
+	display: block;
+	float: right;
+	text-decoration: none;
+}
+
+table td  a.hrefmap {
+	display: inline;
+	float: none;
+	text-decoration: none;
+}
+
+/* make tables look okay */
+table.weekscalendar,
+table.largecalendar,
+table.smallcalendar  {
+    table-layout: fixed;
+	width: 100%;
+	column-width: 14%;
+}
+table.ical td,
+table.weekscalendar td,
+table.smallcalendar td,
+table.largecalendar td {
+	display: table-cell;
+	vertical-align:top;
+}
+
+table.weekscalendar tr.dayheaders th{
+	padding-top: 4em;
+}
+
+table.ical td .event {
+	padding-bottom: 1em;
+}
+
+.ical address {
+	margin: 0 0 0.1 0;
+}
+
+
+.calendar_navigation {
+	margin: 1em 0;
+}
+
+.icalnav,
+.calendar_navigation  form {
+	margin: auto;
+    text-align: center;
+}
+
+.calendar_navigation a {
+	text-decoration: none;
+}
+
+/* move the 'prev' links over to the right */
+.calendar_navigation .prevmonth,
+.calendar_navigation .prevweek {
+	display: block;
+	text-align: left;
+	float: left;
+	
+}
+
+/* move the 'next' links over to the right */
+.calendar_navigation .nextmonth,
+.calendar_navigation .nextweek {
+	display: block;
+	text-align: right;
+	float: right;
+	
+}
+
+/* remove the underline from the abbr that most browsers put in now*/
+
+.event abbr[title] , 
+.ical abbr[title] {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.ical abbr[title] {
+  cursor: help !important;
+  }
+
+/* centre the days pagination at bottom */
+.icalnav {
+	margin: auto;
+}
+
+/* highlight which day we are hovering over */
+#events_wrap  .largecalendar td.hasevents:hover .day{
+	background: #777;
+	color: #fff;
+}
+#events_wrap  .largecalendar td.hasevents:hover .day a{
+	color: #fff;
+}
+
+/* in list type 10 space events */
+
+.ical .toggle_container {
+	margin-top: 2em;
+}
+
+/* in list type 6 space events */
+
+.icalprop h2.cal0 a {
+	text-align: right;
+	display: inline-block;
+	float: right;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+#events_wrap .ical span.starttime,
+#events_wrap .ical span.location,
+#events_wrap .ical span.summary {
+	clear: both;
+	display: block;
+	float: left;
+}
+
+.eventinfo .map,
+.eventinfo .addevent,
+.eventinfo .subscribeevent,
+.eventinfo .subseries,
+#events_wrap .ical span.map,
+#events_wrap .ical span.addevent{
+	display: block;
+	float: right;
+}
+
+#events_wrap .ical span.description {
+	clear: both;
+	display: block;
+}
+
+#events_wrap .ical article {
+	border-bottom: medium solid lightgrey;
+	padding-bottom: 1em;
+	margin-bottom: 1.5em; 
+}
+
+/* unfortunately we need to use divs to hide the details if we want to allow html in details and keep html valid */
+/* ------------------------------ In Box Calendar-- hide the details until we want them  */
+
+
+#events_wrap table.ical td .event div.details2 { /* hide column 2 */
+	display: none;
+}
+
+#events_wrap table.ical .event:hover  div.details2 {
+        color:#333333; 
+        background:#ffffff; 
+        display:block;
+        position:absolute; 
+        margin-top: 12px; 
+		margin-left: 50px;
+        padding:10px; 
+        width:200px; 
+        z-index:100;
+		border: 1px solid #000000;
+		overflow: hidden;  /* v 4.0.12 */
+        }
+#events_wrap table.ical .event:hover  div.details2 {
+	display: block;
+         }
+#events_wrap table.ical .event:hover  div.details2 img {
+	width: 200px;  /* make any images smaller */
+         }	
+#events_wrap table.ical td.endweek .event:hover  div.details2 {  
+/* shift the last column right side over a bit so it fits on the page*/
+		margin-left: -110px;
+        }	
+
+
+@media screen and (max-width: 600px) {
+table.icalprop,
+table.ical {width:100%;}
+.ical thead {display: none;}
+.ical tr:nth-of-type(2n) {background-color: inherit;}
+.ical tr td:first-child {background: #f0f0f0; font-weight:bold;font-size:1.3em;}
+.ical tbody td {display: block;  text-align:center;}
+.ical tbody td:before { 
+    content: attr(data-th); 
+    display: block;
+    text-align:center;  
+  }
+  
+ .ical .amrcol1 div {
+	display: inline;
+} 
+
